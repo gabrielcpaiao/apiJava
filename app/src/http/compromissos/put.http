@@ -1,0 +1,10 @@
+PUT https://8080-gabrielcpaiao-apijava-d79otrkp0vb.ws-us110.gitpod.io/compromissos/1
+Content-Type: application/json
+
+{
+    "descricaoCompromisso": "Atividade Java Spring Boot",
+    "dataInicio": "26 03 2024",
+    "dataFim": "01 04 2024",
+    "horaInicio": "14 Horas",
+    "horaFim": "17 Horas"
+}

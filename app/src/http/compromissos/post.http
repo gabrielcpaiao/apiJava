@@ -1,0 +1,10 @@
+POST https://8080-gabrielcpaiao-apijava-d79otrkp0vb.ws-us110.gitpod.io/compromissos
+Content-Type: application/json
+
+{
+    "descricaoCompromisso": "Teste",
+    "dataInicio": "26 03 2024",
+    "dataFim": "01 04 2024",
+    "horaInicio": "14 Horas",
+    "horaFim": "17 Horas"
+}
