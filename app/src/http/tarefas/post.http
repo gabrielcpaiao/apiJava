@@ -1,0 +1,7 @@
+POST https://8080-gabrielcpaiao-apijava-d79otrkp0vb.ws-us110.gitpod.io/tarefas
+Content-Type: application/json
+
+{
+    "descricaoTarefa": "Atividade Java Spring Boot",
+    "concluido": true
+}
