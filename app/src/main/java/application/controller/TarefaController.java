@@ -2,6 +2,7 @@ package application.controller;
 
 import java.util.List;
 // import java.util.Optional;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,13 +30,20 @@ public class TarefaController {
 
     @GetMapping("/tarefas/{id}")
     public Tarefa getTarefa(@PathVariable Long id) {
-        return tarefaRepo.findById(id).get();
+        Optional<Tarefa> resultado = tarefaRepo.findById(id);
+        if(resultado.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Tarefa não encontrada");
+        }
+        return resultado.get();
     }
 
     //https://github.com/marcoweb/api-data-filme/blob/main/app/src/main/java/application/controller/FilmeController.java
 
     @PostMapping("/tarefas")
     public Tarefa postTarefa(@RequestBody Tarefa tarefa) {
+        if(tarefa.getDescricaoTarefa() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O valor do campo Descrição não pode ser nulo");
+        }
         return tarefaRepo.save(tarefa);
     }
 
@@ -54,7 +62,7 @@ public class TarefaController {
         if(tarefaRepo.existsById(id)) {
             tarefaRepo.deleteById(id);
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Tarefa não encontrada!");
         }
     }
 }

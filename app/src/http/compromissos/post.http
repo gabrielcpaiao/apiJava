@@ -1,4 +1,4 @@
-POST https://8080-gabrielcpaiao-apijava-d79otrkp0vb.ws-us110.gitpod.io/compromissos
+POST https://8080-gabrielcpaiao-apijava-81vajzfm5qi.ws-us110.gitpod.io/compromissos
 Content-Type: application/json
 
 {
@@ -6,5 +6,7 @@ Content-Type: application/json
     "dataInicio": "26 03 2024",
     "dataFim": "01 04 2024",
     "horaInicio": "14 Horas",
-    "horaFim": "17 Horas"
+    "horaFim": "17 Horas",
+    "dataHoraInicial": "02/04/2024 14:00:00",
+    "dataHoraFinal": "02/04/2024 14:00:00"
 }
